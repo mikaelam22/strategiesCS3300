@@ -1,0 +1,47 @@
+<%= form_with(model: strategy) do |form| %>
+  <% if strategy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(strategy.errors.count, "error") %> prohibited this strategy from being saved:</h2>
+
+      <ul>
+        <% strategy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent %>
+    <%= form.text_field :agent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :map %>
+    <%= form.text_field :map %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side %>
+    <%= form.text_field :side %>
+  </div>
+
+  <div class="field">
+    <%= form.label :difficulty %>
+    <%= form.number_field :difficulty %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
