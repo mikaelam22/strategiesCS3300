@@ -4,7 +4,7 @@ class StrategiesController < ApplicationController
 
   # GET /strategies or /strategies.json
   def index
-    @strategies = Strategy.all
+    @strategies = Strategy.order(params[:sort])
   end
 
   # GET /strategies/1 or /strategies/1.json
