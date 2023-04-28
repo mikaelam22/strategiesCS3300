@@ -4,6 +4,8 @@ require "rails_helper"
 RSpec.describe StrategiesController, :type => :controller do
     describe "test web requests" do
 
+        login_user
+        
         # index
         context "GET #index" do
             it "returns a success response" do

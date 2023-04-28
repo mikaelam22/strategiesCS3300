@@ -25,8 +25,11 @@
         <td><%= strategy.side %></td>
         <td><%= strategy.difficulty %></td>
         <td><%= link_to 'Show', strategy %></td>
-        <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
-        <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
+          <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %> 
       </tr>
     <% end %>
   </tbody>

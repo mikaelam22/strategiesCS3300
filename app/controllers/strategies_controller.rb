@@ -1,5 +1,6 @@
 class StrategiesController < ApplicationController
   before_action :set_strategy, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit create update destroy]
 
   # GET /strategies or /strategies.json
   def index
